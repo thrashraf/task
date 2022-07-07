@@ -10,6 +10,10 @@ class Register extends StatefulWidget {
 }
 
 class _RegisterState extends State<Register> {
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+  final confPasswordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,15 +39,25 @@ class _RegisterState extends State<Register> {
               SizedBox(
                 height: 30,
               ),
-              customTextField(placeholder: 'Email'),
+              customTextField(
+                placeholder: 'Email',
+                inputType: TextInputType.emailAddress,
+                inputController: emailController,
+              ),
               SizedBox(
                 height: 20,
               ),
-              passwordTextField(placeholder: 'Password'),
+              passwordTextField(
+                placeholder: 'Password',
+                inputController: passwordController,
+              ),
               SizedBox(
                 height: 20,
               ),
-              passwordTextField(placeholder: 'Confirm password'),
+              passwordTextField(
+                placeholder: 'Confirm password',
+                inputController: confPasswordController,
+              ),
               SizedBox(
                 height: 50,
               ),

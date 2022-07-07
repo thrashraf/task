@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 
 class passwordTextField extends StatefulWidget {
   String placeholder;
+  dynamic inputController;
 
-  passwordTextField({required this.placeholder});
+  passwordTextField({required this.placeholder, required this.inputController});
   @override
   State<passwordTextField> createState() => _passwordTextFieldState();
 }
@@ -14,6 +15,7 @@ class _passwordTextFieldState extends State<passwordTextField> {
     return SizedBox(
       width: double.infinity,
       child: TextFormField(
+        controller: widget.inputController,
         obscureText: true,
         decoration: InputDecoration(
           labelText: widget.placeholder,
